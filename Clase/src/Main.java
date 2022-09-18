@@ -47,12 +47,22 @@ public class Main {
 
         //region Media
 
-        var media = new Media();
+/*        var media = new Media();
         media.IngresarValorVariables();
-        media.CalculaMedia();
+        media.CalculaMedia();*/
 
 
         //endregion
+
+        //region Precio Venta
+
+        var inmobiliaria = new  Inmobiliaria();
+
+        inmobiliaria.IngresaValores();
+        inmobiliaria.CalculaPrecioventa();
+
+        //endregion
+
 
     }
 
