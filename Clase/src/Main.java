@@ -1,9 +1,10 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        //region Tema 1 - 2
         //region Triangulo
 
         /*var triangulo = new CalculaAreaTringulo();
@@ -56,12 +57,65 @@ public class Main {
 
         //region Precio Venta
 
-        var inmobiliaria = new  Inmobiliaria();
+/*        var inmobiliaria = new  Inmobiliaria();
 
         inmobiliaria.IngresaValores();
-        inmobiliaria.CalculaPrecioventa();
+        inmobiliaria.CalculaPrecioventa();*/
 
         //endregion
+
+        //endregion
+
+        //region Tema 3
+
+        //region Modulo Vector
+/*        var vector = new Vector();
+        vector.IngresarValores();
+        vector.CalculaModulo();*/
+        //endregion
+
+        //region Min Max 2 numeros
+        /*
+        var dosNumeros = new NumeroMaxMinDosNumeros();
+        dosNumeros.IngresarValores();
+        dosNumeros.CalculaMaxMin();
+        */
+        //endregion
+
+        //region Min Max 3numeros
+
+/*        var tresNumeros = new NumeroMaxMinTresNumeros();
+        tresNumeros.IngresarValores();
+        tresNumeros.CalculaMaxMin();*/
+
+        //endregion
+
+        //region Dominio
+/*
+        var dominio = new Dominio();
+        dominio.IngresaCorreo();
+*/
+        //endregion
+
+        //region DNI
+
+/*        var DNI = new CalculaLetraDNI();
+        DNI.IngresaValores();
+        DNI.CalculaLetraDNI();*/
+        //endregion
+
+        //region ARRAY
+
+        var array = new ArrayEnteros();
+        array.ValoresArray();
+
+        //endregion
+
+
+
+
+
+
 
 
     }

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Inmobiliaria {
 
-    private final Double IMPUESTOREVAL = 3.4;
+    private final float IMPUESTOREVAL = 3.4f;
     private double _precioVenta;
     private double _conmisionImporteVenta = 0;
     private int _antiguedad =0;
@@ -22,7 +22,7 @@ public class Inmobiliaria {
 
     public void CalculaPrecioventa(){
 
-        _conmisionImporteVenta = _importe*3/100;
+        _conmisionImporteVenta = _importe * 0.03f;
         _precioVenta = _importe+_conmisionImporteVenta+((IMPUESTOREVAL*_antiguedad)/100)*_precioCatastral;
 
         System.out.println("El precio de venta es: "+_precioVenta);
