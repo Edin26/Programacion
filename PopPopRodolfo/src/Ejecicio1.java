@@ -54,8 +54,5 @@ public class Ejecicio1 {
         System.out.println(Arrays.toString(_arrayEnteros));
         System.out.println(Arrays.toString(_copiaArray));
 
-
     }
-
-
 }
