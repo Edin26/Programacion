@@ -106,13 +106,21 @@ public class Main {
 
         //region ARRAY
 
-        var array = new ArrayEnteros();
-        array.ValoresArray();
+/*        var array = new ArrayEnteros();
+        array.ValoresArray();*/
 
         //endregion
 
+        //region Cadena
+/*        var cadena = new Cadena();
+        cadena.MetodosCadena();*/
+        //endregion
 
+        //region Password
+/*        var password = new Password();
+        password.InputPassword();*/
 
+        //endregion
 
 
 
