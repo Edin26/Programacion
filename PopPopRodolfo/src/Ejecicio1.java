@@ -51,8 +51,8 @@ public class Ejecicio1 {
         System.out.println("Son iguales ambos arrays ? "+resultadoComparacion);
 
         //Motrar por consola los arrays
-        System.out.println(Arrays.toString(arrayEnteros));
-        System.out.println(Arrays.toString(copiaArray));
+        System.out.println("Primer array : "+ Arrays.toString(arrayEnteros));
+        System.out.println("Copia de array : "+Arrays.toString(copiaArray));
 
     }
 }

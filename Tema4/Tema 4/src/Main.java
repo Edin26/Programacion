@@ -14,13 +14,12 @@ public class Main {
         //var numero = new  Menor4Numeros();
         //numero.Ejecutar();
 
-        var salario = new Salario();
-        salario.Ejecutar();
-
-
+        //var salario = new Salario();
+        //salario.Ejecutar();
 
 
 
     }
-
 }
+
+
