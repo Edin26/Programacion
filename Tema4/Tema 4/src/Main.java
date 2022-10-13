@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -16,6 +14,15 @@ public class Main {
 
         //var salario = new Salario();
         //salario.Ejecutar();
+
+        //var desviacion = new Desviacion();
+        //desviacion.Ejecutar();
+
+       var array = new MetodosArray();
+       //array.EjecutarPosicionesCero();
+       //array.EjecutarBuscarNumeroNegativo();
+       //array.EjecutarValorMasAlto();
+
 
 
 
