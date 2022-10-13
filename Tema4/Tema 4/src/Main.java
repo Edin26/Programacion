@@ -18,7 +18,7 @@ public class Main {
         //var desviacion = new Desviacion();
         //desviacion.Ejecutar();
 
-       var array = new MetodosArray();
+       //var array = new MetodosArray();
        //array.EjecutarPosicionesCero();
        //array.EjecutarBuscarNumeroNegativo();
        //array.EjecutarValorMasAlto();
