@@ -23,6 +23,14 @@ public class Main {
        //array.EjecutarBuscarNumeroNegativo();
        //array.EjecutarValorMasAlto();
 
+        //var DNI = new SolicitarDNI();
+        //DNI.Ejecutar();
+
+
+
+
+
+
 
 
 
