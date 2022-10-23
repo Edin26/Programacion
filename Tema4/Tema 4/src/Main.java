@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -26,10 +28,20 @@ public class Main {
         //var DNI = new SolicitarDNI();
         //DNI.Ejecutar();
 
+        //var vocales = new Vocales();
+        //vocales.Ejecutar();
+
+        //var palabrasCadena = new PalabrasCadena();
+        //palabrasCadena.Ejecutar();
 
 
+        int matriz[][] = new int[4][4];
 
-
+        int[][] matrizIdentidad =
+                       {{1,0,0,0},
+                        {0,1,0,0},
+                        {0,0,1,0},
+                        {0,0,0,1}};
 
 
 
