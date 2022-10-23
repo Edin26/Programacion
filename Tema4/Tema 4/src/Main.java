@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -33,17 +34,10 @@ public class Main {
 
         //var palabrasCadena = new PalabrasCadena();
         //palabrasCadena.Ejecutar();
+        //Muestro la matriz
 
-
-        int matriz[][] = new int[4][4];
-
-        int[][] matrizIdentidad =
-                       {{1,0,0,0},
-                        {0,1,0,0},
-                        {0,0,1,0},
-                        {0,0,0,1}};
-
-
+        var palabras = new  Palabras();
+        palabras.Ejecutar();
 
 
     }
