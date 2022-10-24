@@ -18,33 +18,34 @@ public class Palabras {
             Scanner entrada = new Scanner(System.in);
             opcionElegida = entrada.nextInt();
             menuActivo=true;
-
-            switch (opcionElegida) {
-
-                case 1:
-                    GuardarPalabra(palabrasGuardadas);
-                    menuActivo = SalirDelMenu();
-                    break;
-                case 2:
-                    ContarPalabrasCont(palabrasGuardadas);
-                    menuActivo = SalirDelMenu();
-                    break;
-                case 3:
-                    BuscarUnaPalabra(palabrasGuardadas);
-                    menuActivo = SalirDelMenu();
-                    break;
-                case 4:
-                    System.out.println("Cerrando el programa :D ");
-                    menuActivo = false;
-                    break;
-                default:
-                    break;
-            }
-
+            OpcionesMenu(opcionElegida);
         } while (menuActivo);
 
     }
+    public void OpcionesMenu (int opcion){
+        switch (opcion) {
 
+            case 1:
+                GuardarPalabra(palabrasGuardadas);
+                menuActivo = SalirDelMenu();
+                break;
+            case 2:
+                ContarPalabrasCont(palabrasGuardadas);
+                menuActivo = SalirDelMenu();
+                break;
+            case 3:
+                BuscarUnaPalabra(palabrasGuardadas);
+                menuActivo = SalirDelMenu();
+                break;
+            case 4:
+                System.out.println("Cerrando el programa :D ");
+                menuActivo = false;
+                break;
+            default:
+                break;
+        }
+
+    }
     public void GuardarPalabra(String[] palabras) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Escribe la palabra a guardar : ");
@@ -56,8 +57,6 @@ public class Palabras {
                 break;
             }
         }
-
-
     }
     public void ContarPalabrasCont(String[] palabras) {
         contadorPalabrasCont =0;
@@ -77,7 +76,7 @@ public class Palabras {
         var palabraABuscar = entrada.nextLine();
         boolean palabraEncontrada=false;
         for(int i=0; i<palabras.length;i++ ){
-            if( palabras[i] == palabraABuscar){
+            if( palabras[i].equals(palabraABuscar)){
                 palabraEncontrada = true;
                 System.out.println("Palabra a buscar : "+ palabraABuscar +" Esta esta en la posicion : "+i);
                 break;
@@ -89,15 +88,18 @@ public class Palabras {
     }
     public boolean SalirDelMenu(){
         System.out.println("Desea continuar ? s/n : ");
-        Scanner entrada = new Scanner(System.in);
-        var respuesta = entrada.nextLine();
-        if( respuesta == "n" ){
-            return false;
+        Scanner lector = new Scanner(System.in);
+        var respuesta =  lector.nextLine().charAt(0);
+        boolean salirMenu;
+
+        if( respuesta == 'n' ){
+            System.out.println("Cerrando el programa.....");
+            salirMenu =  false;
         }
-        else
-        {
-            return true;
+        else {
+            salirMenu =  true;
         }
+        return  salirMenu ;
 
     }
 }

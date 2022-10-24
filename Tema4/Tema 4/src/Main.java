@@ -36,8 +36,10 @@ public class Main {
         //palabrasCadena.Ejecutar();
         //Muestro la matriz
 
-        var palabras = new  Palabras();
-        palabras.Ejecutar();
+        // var palabras = new  Palabras();
+        //palabras.Ejecutar();
+
+
 
 
     }
