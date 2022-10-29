@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -104,7 +105,7 @@ public class Ejercicio1 {
                         int numeroAComprobar = matrizNumerosEnteros[i];
                         boolean esPrimo = true;
                         for (int j = 2; j < numeroAComprobar; j++) {
-                            if (numeroAComprobar % j == 0) {  
+                            if (numeroAComprobar % j == 0) {
                                 esPrimo = false;
                                 break;
                             }
@@ -114,42 +115,80 @@ public class Ejercicio1 {
                         }
                     }
                     System.out.println();
-                    //endregion
+                    break;
+                //endregion
                 case 6:
                     //region Mostrar el valor máximo y el mínimo del array
                     int primerNumeroMaximo = 0;
                     int segundoNumeroMaximo = 0;
                     int primerNumeroMinimo = matrizNumerosEnteros[0];
-                    int segundoNumeroMinimo = matrizNumerosEnteros[0];
+                    int segundoNumeroMinimo = primerNumeroMinimo;
+                    int posicionesValores[] = new int[4];
                     System.out.println("Numero Maximo Y Minimo del array ");
 
-                    for (int valor : matrizNumerosEnteros) {
-                        if (valor > primerNumeroMaximo) {
-                            primerNumeroMaximo = valor;
+                    for (int i = 0; i < matrizNumerosEnteros.length; i++) {
+                        //primer numero maximo
+                        if (matrizNumerosEnteros[i] > primerNumeroMaximo) {
+                            primerNumeroMaximo = matrizNumerosEnteros[i];
+                            posicionesValores[0] = i;
                         }
-                        if(valor < primerNumeroMinimo ){
-                            primerNumeroMinimo = valor;
+                        //segundo numero maximo
+                        if (i > segundoNumeroMaximo && matrizNumerosEnteros[i] != primerNumeroMaximo) {
+                            segundoNumeroMaximo = matrizNumerosEnteros[i];
+                            posicionesValores[1] = i;
+                        }
+                        //primer numero minimo
+                        if (i < primerNumeroMinimo) {
+                            primerNumeroMinimo = matrizNumerosEnteros[i];
+                            posicionesValores[2] = i;
+                        }
+                        //segundo numero minimo
+                        if (i < segundoNumeroMinimo && matrizNumerosEnteros[i] != primerNumeroMinimo) {
+                            segundoNumeroMinimo = matrizNumerosEnteros[i];
+                            posicionesValores[3] = i;
                         }
                     }
-                    System.out.println("Primer Numero maximo : " + primerNumeroMaximo);
-                    System.out.println("Primer Numero minimo : " + primerNumeroMinimo);
+                    System.out.println(Arrays.toString(matrizNumerosEnteros));
+                    System.out.println("Primer Numero maximo : " + primerNumeroMaximo + ", posicion en array : " + posicionesValores[0]);
+                    System.out.println("Segundo Numero maximo : " + segundoNumeroMaximo + ", posicion en array : " + posicionesValores[1]);
+                    System.out.println("Primer Numero minimo : " + primerNumeroMinimo + ", posicion en array : " + posicionesValores[2]);
+                    System.out.println("Segundo Numero minimo : " + segundoNumeroMinimo + ", posicion en array : " + posicionesValores[3]);
+                    System.out.println();
                     break;
+                //endregion
+                case 7:
+                    //region Mostrar el numeros multiplos de 3 y 7
+                    String binarios = null;
+                    System.out.println("Multiplos de 3 : ");
+                    for (int valor : matrizNumerosEnteros) {
+                        if (valor % 3 == 0) {
+                            binarios = Integer.toBinaryString(valor);
+                            System.out.print(binarios + " ,");
+
+                        }
+                    }
+                    System.out.println();
+                    System.out.println("Multiplos de 5 : ");
+                    for (int valor : matrizNumerosEnteros) {
+                        if (valor % 5 == 0) {
+                            binarios = Integer.toBinaryString(valor);
+                            System.out.print(binarios + " ,");
+
+                        }
+                    }
                     //endregion
-
-                    // default:
-                    //     System.out.println("Opcion selecionada no valida. ");
-                    //     break;
-
             }
-
-            System.out.println("Desea continuar ? s/n ");
+            System.out.println();
             String salirMenu = "";
-            salirMenu = entrada.next();
-
-            if (salirMenu.equals("n")) {
+            if (opcionSeleccionada != 8) {
+                System.out.println("Desea continuar ? s/n ");
+                salirMenu = entrada.next();
+            }
+            if (salirMenu.equals("n") || opcionSeleccionada == 8) {
                 System.out.println("Saliendo del programa ...");
                 menuActivo = false;
             }
+            opcionSeleccionada = 0;
 
         } while (menuActivo);
 
