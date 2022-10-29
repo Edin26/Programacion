@@ -104,7 +104,7 @@ public class Ejercicio1 {
                         int numeroAComprobar = matrizNumerosEnteros[i];
                         boolean esPrimo = true;
                         for (int j = 2; j < numeroAComprobar; j++) {
-                            if (numeroAComprobar % j == 0) {
+                            if (numeroAComprobar % j == 0) {  
                                 esPrimo = false;
                                 break;
                             }
