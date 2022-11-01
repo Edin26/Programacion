@@ -173,10 +173,10 @@ public class Ejercicio2 {
             System.out.println();
             String salirMenu = "";
             if (opcionSeleccionada != 8) {
-                System.out.println("Desea continuar ? s/n ");
-                salirMenu = lector.next();
+                System.out.println("Desea continuar ? S/N ");
+                salirMenu = lector.next().toUpperCase();
             }
-            if (salirMenu.equals("n") || opcionSeleccionada == 8) {
+            if (salirMenu.equals("N") || opcionSeleccionada == 8) {
                 System.out.println("Saliendo del programa ...");
                 menuActivo = false;
             }

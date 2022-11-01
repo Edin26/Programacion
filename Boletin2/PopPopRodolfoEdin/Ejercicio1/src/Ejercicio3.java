@@ -209,10 +209,10 @@ public class Ejercicio3 {
             System.out.println();
             String salirMenu = "";
             if (opcionElegida != 4) {
-                System.out.println("Desea volver a jugar ? s/n ");
-                salirMenu = lector.next();
+                System.out.println("Desea volver a jugar ? S/N ");
+                salirMenu = lector.next().toUpperCase();
             }
-            if (salirMenu.equals("n") || opcionElegida == 4) {
+            if (salirMenu.equals("N") || opcionElegida == 4) {
                 System.out.println("Cerrando el juego ...");
                 juegoActivo = false;
             }
