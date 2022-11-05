@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a7cdaca-2f14-4341-911c-3b93e3e5cff3" name="Changes" comment="" />
+    <list default="true" id="9a7cdaca-2f14-4341-911c-3b93e3e5cff3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/Ejercicio1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/Ahorcado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/CadenaPalíndroma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/Ejercicio1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/Ejercicio2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/Ejercicio3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/HundirLaFlota.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/src/Ahorcado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/src/CadenaPalíndroma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/src/Ejercicio1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/src/Ejercicio2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/src/Ejercicio3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Boletin2/PopPopRodolfoEdin/Ejercicio1/src/HundirLaFlota.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +47,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/REPOSITORIO_GITHUB/PopPopRodolfo"
+    "last_opened_file_path": "D:/REPOSITORIO_GITHUB/Boletin2/PopPopRodolfoEdin/PopPopRodolfo/src/Ahorcado.java"
   }
 }]]></component>
   <component name="RunManager">

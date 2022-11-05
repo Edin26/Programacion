@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc560fcf-0cbe-4706-b3b3-c7360f6426d2" name="Changes" comment="" />
+    <list default="true" id="fc560fcf-0cbe-4706-b3b3-c7360f6426d2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PopPopRodolfoEdin/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PopPopRodolfoEdin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/Ejercicio1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/Ahorcado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/CadenaPalíndroma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/Ejercicio1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/Ejercicio2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/Ejercicio3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/out/production/Ejercicio1/HundirLaFlota.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/src/Ahorcado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/src/CadenaPalíndroma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/src/Ejercicio1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/src/Ejercicio2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/src/Ejercicio3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopPopRodolfoEdin/Ejercicio1/src/HundirLaFlota.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,13 +43,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/REPOSITORIO_GITHUB/Boletin2/PopPopRodolfoEdin"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/REPOSITORIO_GITHUB/Boletin2&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

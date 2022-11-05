@@ -12,10 +12,8 @@ public class Ejercicio1 {
         boolean menuActivo = false;
         int opcionSeleccionada = 0;
 
-
         // array de 100 números enteros con valores aleatorios entre 0 y 100
         Random rnd = new Random();
-
         // Relleno array de numeros enteros de 0 a 100
         for (int i = 0; i < matrizNumerosEnteros.length; i++) {
             matrizNumerosEnteros[i] = rnd.nextInt(100);
@@ -133,17 +131,17 @@ public class Ejercicio1 {
                             posicionesValores[0] = i;
                         }
                         //segundo numero maximo
-                        if (i > segundoNumeroMaximo && matrizNumerosEnteros[i] != primerNumeroMaximo) {
+                        if (matrizNumerosEnteros[i] > segundoNumeroMaximo && matrizNumerosEnteros[i] != primerNumeroMaximo) {
                             segundoNumeroMaximo = matrizNumerosEnteros[i];
                             posicionesValores[1] = i;
                         }
                         //primer numero minimo
-                        if (i < primerNumeroMinimo) {
+                        if (matrizNumerosEnteros[i] < primerNumeroMinimo) {
                             primerNumeroMinimo = matrizNumerosEnteros[i];
                             posicionesValores[2] = i;
                         }
                         //segundo numero minimo
-                        if (i < segundoNumeroMinimo && matrizNumerosEnteros[i] != primerNumeroMinimo) {
+                        if (matrizNumerosEnteros[i] < segundoNumeroMinimo && matrizNumerosEnteros[i] != primerNumeroMinimo) {
                             segundoNumeroMinimo = matrizNumerosEnteros[i];
                             posicionesValores[3] = i;
                         }
@@ -178,6 +176,7 @@ public class Ejercicio1 {
                     }
                     //endregion
             }
+            //region Salir Menu
             System.out.println();
             String salirMenu = "";
             if (opcionSeleccionada != 8) {
@@ -189,6 +188,7 @@ public class Ejercicio1 {
                 menuActivo = false;
             }
             opcionSeleccionada = 0;
+            //endregion
 
         } while (menuActivo);
 

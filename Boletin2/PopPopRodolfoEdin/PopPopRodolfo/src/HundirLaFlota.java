@@ -17,10 +17,17 @@ public class HundirLaFlota {
         Random rnd = new Random();
         //Generar posiciones aleatorias de los barcos
         for (int i = 0; i < 10; i++) {
-            int posicionFila = rnd.nextInt(1, 8);
-            int posicionColumna = rnd.nextInt(1, 8);
-            matriz[posicionFila][posicionColumna] = 1;
+            boolean posicionSinBarco = true;
+            while (posicionSinBarco) {
+                int posicionFila = rnd.nextInt(0, 7);
+                int posicionColumna = rnd.nextInt(0, 7);
+                if (matriz[posicionFila][posicionColumna] != 1) {
+                    matriz[posicionFila][posicionColumna] = 1;
+                    posicionSinBarco = false;
+                }
+            }
         }
+
         System.out.println("===============|HUNDIR LA FLOTA |===============");
         System.out.println();
         boolean juegoActivo = true;
@@ -52,7 +59,7 @@ public class HundirLaFlota {
                 filaSeleccionada = entrada.nextInt();
                 System.out.println("Selecciona una columna : ");
                 columnaSeleccionada = entrada.nextInt();
-            }catch (Exception e){
+            } catch (Exception e) {
                 coordenadasValidas = false;
                 System.out.println("Las coordenadas tienen que ser un numero entero.");
             }

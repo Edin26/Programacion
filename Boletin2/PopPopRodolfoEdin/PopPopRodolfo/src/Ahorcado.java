@@ -87,6 +87,7 @@ public class Ahorcado {
             boolean juegoActivo = true;
             boolean palabraEncontrada = false;
             boolean NopalabraEncontrada = false;
+
             //region ADIVINANDO LA PALABRA
             while (juegoActivo) {
                 System.out.println("Escribe una letra :                         Intentos : " + intentos);
@@ -99,7 +100,6 @@ public class Ahorcado {
                     if (letra == palabraCorrecta[i] && palabraAdivinar[i] == '_') {
                         palabraAdivinar[i] = letra;
                         intentos++;
-                        break;
                     }
                 }
                 //Mostrar por pantalla el array de char de palabra adivinar para que el usuario sepa la palabra que esta formando

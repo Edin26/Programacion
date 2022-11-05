@@ -34,6 +34,7 @@ public class Ejercicio2 {
             //endregion
 
             switch (opcionSeleccionada) {
+
                 case 1:
                     //region Guardar Correo
                     String emailAGuardar = null;
@@ -125,9 +126,9 @@ public class Ejercicio2 {
                 case 4:
                     //region Mostrar el porcentaje de correos de cada uno de los 3 dominios : gmail, hotmail o outlook y yahoo.
                     int contadorGmail = 0;
-                    int contadorHotmail = 0;
-                    int contadorOutlook = 0;
+                    int contadorHotmailyOutlook = 0;
                     int contadorYahoo = 0;
+                    int contadorCorreosTotal=0;
                     //Comprobar los dominios existentes en array
                     for (var email : emails) {
                         if (email != null) {
@@ -135,16 +136,17 @@ public class Ejercicio2 {
                             int indice = email.indexOf("@");
                             int indice2 = email.indexOf(".");
                             var dominio = email.substring(indice + 1, indice2);
+                            contadorCorreosTotal++;
                             //contar distintos tipos de dominio email
                             switch (dominio) {
                                 case "gmail":
                                     contadorGmail++;
                                     break;
                                 case "hotmail":
-                                    contadorHotmail++;
+                                    contadorHotmailyOutlook++;
                                     break;
                                 case "outlook":
-                                    contadorOutlook++;
+                                    contadorHotmailyOutlook++;
                                     break;
                                 case "yahoo":
                                     contadorYahoo++;
@@ -155,15 +157,12 @@ public class Ejercicio2 {
                         }
                     }
                     //Calcula porcentaje de correos
-                    double porcentajeGmail = ((double) contadorGmail / emails.length) * 100;
-                    double porcentajeHotmail = ((double) contadorHotmail / emails.length) * 100;
-                    double porcentajeOutlook = ((double) contadorOutlook / emails.length) * 100;
-                    double porcentajeYahoo = ((double) contadorYahoo / emails.length) * 100;
+                    double porcentajeGmail = ((double) contadorGmail / contadorCorreosTotal) * 100;
+                    double porcentajeHotmailYOutlook = ((double) contadorHotmailyOutlook / contadorCorreosTotal) * 100;
+                    double porcentajeYahoo = ((double) contadorYahoo / contadorCorreosTotal) * 100;
                     System.out.println("El porcentaje de correos gmail es : " + porcentajeGmail + "%");
-                    System.out.println("El porcentaje de correos hotmail es : " + porcentajeHotmail + "%");
-                    System.out.println("El porcentaje de correos outlook es : " + porcentajeOutlook + "%");
+                    System.out.println("El porcentaje de correos hotmail y Outlook es : " + porcentajeHotmailYOutlook + "%");
                     System.out.println("El porcentaje de correos yahoo es : " + porcentajeYahoo + "%");
-
                     //endregion
                     break;
                 default:

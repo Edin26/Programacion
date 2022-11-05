@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CadenaPalíndroma {
+public class PalabraPalindroma{
 
     public static void main(String[] args) {
 

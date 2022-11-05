@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6f6cb83-d541-4e59-89ca-9e91e17f05fd" name="Changes" comment="" />
+    <list default="true" id="f6f6cb83-d541-4e59-89ca-9e91e17f05fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Ejercicio1/src/AlgoritmosOrdenacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicio1/out/production/Ejercicio1/Ahorcado.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicio1/out/production/Ejercicio1/Ahorcado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicio1/out/production/Ejercicio1/Ejercicio2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicio1/out/production/Ejercicio1/Ejercicio2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicio1/src/Ahorcado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicio1/src/Ahorcado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicio1/src/Ejercicio2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicio1/src/Ejercicio2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ejercicio1/src/HundirLaFlota.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ejercicio1/src/HundirLaFlota.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +32,26 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/REPOSITORIO_GITHUB/Boletin2/PopPopRodolfoEdin/Ejercicio1"
+    "last_opened_file_path": "D:/REPOSITORIO_GITHUB/Boletin2/PopPopRodolfoEdin/Ejercicio1/src/HundirLaFlota.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="HundirLaFlota" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HundirLaFlota" />
+      <module name="PopPopRodolfoEdin" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HundirLaFlota" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
