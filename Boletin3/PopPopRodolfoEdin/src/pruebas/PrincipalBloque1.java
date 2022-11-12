@@ -25,6 +25,10 @@ public class PrincipalBloque1 {
             System.out.println("3. Resistencia equivalente. ");
             System.out.println("4. Modifica todas aquellas posiciones que almacenan un número negativo ");
             System.out.println("5. Calcula la media de una matriz.");
+            System.out.println("6. Redondear valores array ");
+            System.out.println("7. Modificar posiciones array con expresion (i* j)3 /2*(i + j) ");
+            System.out.println("8. Mostrar Media filas y fila con la media mas alta.");
+            System.out.println("9. Buscar filas repetidas en array");
 
             try {
                 opcionElejida = entrada.nextInt();
@@ -81,15 +85,17 @@ public class PrincipalBloque1 {
                     //endregion
                     break;
                 case 4:
+                    //region AlmacenarMediaPositivos en array
                     int [] array = {100,3,9,-8,4,-90,-7};
                     System.out.println("Array antes de llamar metodo modificar posiciones negativas ");
                     System.out.println(Arrays.toString(array));
                     MTDNumeros.AlmacenarMediaPositivos(array);
                     System.out.println("Array antes de llamar metodo modificar posiciones negativas ");
                     System.out.println(Arrays.toString(array));
+                    //endregion
                     break;
                 case 5:
-                    //region Calcula media
+                    //region Calcula media array
                     Random rnd = new Random();
                     float matrizTipoFloat []= new float[10];
                     int matrizTipoInt []= new int[10];
@@ -103,11 +109,45 @@ public class PrincipalBloque1 {
                     System.out.println("La media de matriz de float es : "+ MTDNumeros.CalculaMedia(matrizTipoFloat) );
                     System.out.println("La media de matriz de int es : "+ MTDNumeros.CalculaMedia(matrizTipoInt) );
 
-
-
                     //endregion
                     break;
                 case 6:
+                    //region Redondear valaaron array enteros
+                    float valoresfloat[] = {1.22f ,2.6f, 5.44f, 4.77f };
+
+                    System.out.println("Valores antes redondear : " );
+                    System.out.println(Arrays.toString(valoresfloat));
+
+                    var redondearArriba = MTDNumeros.RedondearValores(valoresfloat,false);
+                    System.out.println("Valores redondeados por arriba : " );
+                    System.out.println(Arrays.toString(redondearArriba));
+
+                    var redondearAbajo = MTDNumeros.RedondearValores(valoresfloat,true);
+                    System.out.println("Valores redondeados por arriba : " );
+                    System.out.println(Arrays.toString(redondearAbajo));
+
+                    //endregion
+                    break;
+                case 7:
+                    //region Modificar posiciones array con expresion (i* j)3 /2*(i + j)
+                    double matriz [][] = {{1.4,3.7,4.6},{2.6,6.8,3.66},{6.77,5.44,1.55}};
+
+                    System.out.println("Array antes de modificar posiciones ");
+                    MTDNumeros.PrintarArray2D(matriz);
+
+                    MTDNumeros.ModificarPosicionesArray(matriz);
+                    System.out.println("Array despues de modificar posiciones");
+                    MTDNumeros.PrintarArray2D(matriz);
+
+                    //endregion
+                    break;
+                case 8:
+                    int array1 [][] = {{1,3,4},{2,6,3},{6,5,1}};
+                    MTDNumeros.CalculaMediaDeFilas(array1);
+                    break;
+                case 9:
+                    float valores [][] = {{1.4f,3.8f,4.6f},{2.6f,6.8f,3.6f},{6.7f,5.4f,1.5f}};
+                    System.out.println("Existen filas repetidas : " + MTDNumeros.BuscarFilasRepetidas(valores) );
                     break;
 
             }
