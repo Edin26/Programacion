@@ -98,4 +98,25 @@ public class MTDCadenas {
         } else
             return false;
     }
+
+    public static void CodificarUnTexto ( String texto ){
+
+
+        var prueba =  texto.replace('i','1');
+
+        var prueba1 = prueba.replace('o','0');
+
+        var prueba2 = prueba1.replace('a','*');
+
+        var prueba3 = prueba2.split(" ");
+
+        for (int i = 0; i< prueba3.length; i++ ){
+
+
+        }
+
+
+
+        System.out.println(prueba2);
+    }
 }

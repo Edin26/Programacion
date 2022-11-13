@@ -60,6 +60,11 @@ public class PrincipalBloque2 {
                     break;
                 case 5:
                     //region Codificar un texto
+                    String textoSinCodificar= "Pocholito nena";
+                    System.out.println(textoSinCodificar);
+                    MTDCadenas.CodificarUnTexto(textoSinCodificar);
+
+                 //  System.out.println(textoSinCodificar);
 
 
                     //endregion
