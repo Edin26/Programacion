@@ -1,34 +1,21 @@
-package pruebas;
+package Pruebas;
 
-import bloqueEjercicios1.MTDNumeros;
+import BloqueEjercicio2.MTDCadenas;
+import BloqueEjercicios1.MTDNumeros;
 
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-
-//import static bloqueEjercicios1.MTDNumeros.NumeroPerfecto;
-
-
 public class PrincipalBloque1 {
-
     public static void main(String[] args) {
         boolean menuActivo = true;
         int opcionElejida = 0;
 
-
         do {
             Scanner entrada = new Scanner(System.in);
-            System.out.println();
-            System.out.println("1. Numero perfecto. ");
-            System.out.println("2. Minimo comun multiplo. ");
-            System.out.println("3. Resistencia equivalente. ");
-            System.out.println("4. Modifica todas aquellas posiciones que almacenan un número negativo ");
-            System.out.println("5. Calcula la media de una matriz.");
-            System.out.println("6. Redondear valores array ");
-            System.out.println("7. Modificar posiciones array con expresion (i* j)3 /2*(i + j) ");
-            System.out.println("8. Mostrar Media filas y fila con la media mas alta.");
-            System.out.println("9. Buscar filas repetidas en array");
+            //mostrar consola opciones menu
+            MTDNumeros.OpcionesMenu();
 
             try {
                 opcionElejida = entrada.nextInt();
@@ -77,16 +64,16 @@ public class PrincipalBloque1 {
                     break;
                 case 3:
                     //region Resistencia equivalente
-                    float r1=5;
-                    float r2=30;
-                    System.out.println("Resistencia equivalente : "+MTDNumeros.CalculaResistenciaEquivalente(r1,r2)+" Ohmnios.");
-                    System.out.println("Resistencia equivalente : "+ MTDNumeros.CalculaResistenciaEquivalente(r1,r2,1)+" microOhmnios.");
-                    System.out.println("Resistencia equivalente : "+MTDNumeros.CalculaResistenciaEquivalente(r1,r2,2)+" KiloOhmnios.");
+                    float r1 = 5;
+                    float r2 = 30;
+                    System.out.println("Resistencia equivalente : " + MTDNumeros.CalculaResistenciaEquivalente(r1, r2) + " Ohmnios.");
+                    System.out.println("Resistencia equivalente : " + MTDNumeros.CalculaResistenciaEquivalente(r1, r2, 1) + " microOhmnios.");
+                    System.out.println("Resistencia equivalente : " + MTDNumeros.CalculaResistenciaEquivalente(r1, r2, 2) + " KiloOhmnios.");
                     //endregion
                     break;
                 case 4:
                     //region AlmacenarMediaPositivos en array
-                    int [] array = {100,3,9,-8,4,-90,-7};
+                    int[] array = {100, 3, 9, -8, 4, -90, -7};
                     System.out.println("Array antes de llamar metodo modificar posiciones negativas ");
                     System.out.println(Arrays.toString(array));
                     MTDNumeros.AlmacenarMediaPositivos(array);
@@ -97,40 +84,40 @@ public class PrincipalBloque1 {
                 case 5:
                     //region Calcula media array
                     Random rnd = new Random();
-                    float matrizTipoFloat []= new float[10];
-                    int matrizTipoInt []= new int[10];
+                    float matrizTipoFloat[] = new float[10];
+                    int matrizTipoInt[] = new int[10];
 
-                    for (int i =0; i<matrizTipoFloat.length;i++){
-                        matrizTipoFloat[i] = rnd.nextFloat(1,100);
+                    for (int i = 0; i < matrizTipoFloat.length; i++) {
+                        matrizTipoFloat[i] = rnd.nextFloat(1, 100);
                     }
-                    for (int i =0; i<matrizTipoInt.length;i++){
-                        matrizTipoInt[i] = rnd.nextInt(1,100);
+                    for (int i = 0; i < matrizTipoInt.length; i++) {
+                        matrizTipoInt[i] = rnd.nextInt(1, 100);
                     }
-                    System.out.println("La media de matriz de float es : "+ MTDNumeros.CalculaMedia(matrizTipoFloat) );
-                    System.out.println("La media de matriz de int es : "+ MTDNumeros.CalculaMedia(matrizTipoInt) );
+                    System.out.println("La media de matriz de float es : " + MTDNumeros.CalculaMedia(matrizTipoFloat));
+                    System.out.println("La media de matriz de int es : " + MTDNumeros.CalculaMedia(matrizTipoInt));
 
                     //endregion
                     break;
                 case 6:
                     //region Redondear valaaron array enteros
-                    float valoresfloat[] = {1.22f ,2.6f, 5.44f, 4.77f };
+                    float valoresfloat[] = {1.22f, 2.6f, 5.44f, 4.77f};
 
-                    System.out.println("Valores antes redondear : " );
+                    System.out.println("Valores antes redondear : ");
                     System.out.println(Arrays.toString(valoresfloat));
 
-                    var redondearArriba = MTDNumeros.RedondearValores(valoresfloat,false);
-                    System.out.println("Valores redondeados por arriba : " );
+                    var redondearArriba = MTDNumeros.RedondearValores(valoresfloat, false);
+                    System.out.println("Valores redondeados por arriba : ");
                     System.out.println(Arrays.toString(redondearArriba));
 
-                    var redondearAbajo = MTDNumeros.RedondearValores(valoresfloat,true);
-                    System.out.println("Valores redondeados por arriba : " );
+                    var redondearAbajo = MTDNumeros.RedondearValores(valoresfloat, true);
+                    System.out.println("Valores redondeados por arriba : ");
                     System.out.println(Arrays.toString(redondearAbajo));
 
                     //endregion
                     break;
                 case 7:
                     //region Modificar posiciones array con expresion (i* j)3 /2*(i + j)
-                    double matriz [][] = {{1.4,3.7,4.6},{2.6,6.8,3.66},{6.77,5.44,1.55}};
+                    double matriz[][] = {{1.4, 3.7, 4.6}, {2.6, 6.8, 3.66}, {6.77, 5.44, 1.55}};
 
                     System.out.println("Array antes de modificar posiciones ");
                     MTDNumeros.PrintarArray2D(matriz);
@@ -142,19 +129,26 @@ public class PrincipalBloque1 {
                     //endregion
                     break;
                 case 8:
-                    int array1 [][] = {{1,3,4},{2,6,3},{6,5,1}};
+                    int array1[][] = {{1, 3, 4}, {2, 6, 3}, {6, 5, 1}};
                     MTDNumeros.CalculaMediaDeFilas(array1);
                     break;
                 case 9:
-                    float valores [][] = {{1.4f,3.8f,4.6f},{2.6f,6.8f,3.6f},{6.7f,5.4f,1.5f}};
-                    System.out.println("Existen filas repetidas : " + MTDNumeros.BuscarFilasRepetidas(valores) );
+                    //region buscar filas repetidas
+                    float valores[][] = {{1.5f, 3.8f, 4.6f},
+                            {1.5f, 3.8f, 4.6f},
+                            {3.4f, 8.8f, 3.6f}};
+
+                    MTDNumeros.PrintarArray2D(valores);
+                    System.out.println("Existen filas repetidas : " + MTDNumeros.BuscarFilasRepetidas(valores));
+                    //endregion
                     break;
-
+                case 10 :
+                    //region salir del menu
+                    System.out.println("Cerrando el programa...");
+                    menuActivo = false;
+                    //endregion
+                    break;
             }
-
         } while (menuActivo);
-
-
     }
-
 }

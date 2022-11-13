@@ -1,8 +1,21 @@
-package bloqueEjercicios1;
+package BloqueEjercicios1;
 
 import java.text.DecimalFormat;
 
 public class MTDNumeros {
+    public static void OpcionesMenu(){
+        System.out.println();
+        System.out.println("1. Numero perfecto. ");
+        System.out.println("2. Minimo comun multiplo. ");
+        System.out.println("3. Resistencia equivalente. ");
+        System.out.println("4. Modifica todas aquellas posiciones que almacenan un número negativo ");
+        System.out.println("5. Calcula la media de una matriz.");
+        System.out.println("6. Redondear valores array ");
+        System.out.println("7. Modificar posiciones array con expresion (i* j)3 /2*(i + j) ");
+        System.out.println("8. Mostrar Media filas y fila con la media mas alta.");
+        System.out.println("9. Buscar filas repetidas en array");
+        System.out.println("10. Cerrar el programa ");
+    }
 
     public static boolean NumeroPerfecto(int numero) {
         double suma = 0;
@@ -149,52 +162,77 @@ public class MTDNumeros {
             }
         }
     }
-    public static void CalculaMediaDeFilas(int [] [] array){
-        int contadorFila=0;
-        int filaAlta=0;
-        float mediaFilaMasAlta=0;
-        for (var fila: array) {
-                //calcula la media de la fila
-                var mediaFila = MTDNumeros.CalculaMedia(fila);
-                //mostrar por consolta la media de la fila
-                System.out.println("La media de la fila : "+ contadorFila + " es "+mediaFila);
-                //alamacenar la fila con media mas alta
-                if (mediaFila > mediaFilaMasAlta){
-                    mediaFilaMasAlta = mediaFila;
-                    filaAlta = contadorFila;
-                }
-                contadorFila++;
+
+    public static void CalculaMediaDeFilas(int[][] array) {
+        int contadorFila = 0;
+        int filaAlta = 0;
+        float mediaFilaMasAlta = 0;
+        for (var fila : array) {
+            //calcula la media de la fila
+            var mediaFila = MTDNumeros.CalculaMedia(fila);
+            //mostrar por consolta la media de la fila
+            System.out.println("La media de la fila : " + contadorFila + " es " + mediaFila);
+            //alamacenar la fila con media mas alta
+            if (mediaFila > mediaFilaMasAlta) {
+                mediaFilaMasAlta = mediaFila;
+                filaAlta = contadorFila;
+            }
+            contadorFila++;
         }
-        System.out.println("La fila con la media mas alta es :"+filaAlta);
+        System.out.println("La fila con la media mas alta es :" + filaAlta);
     }
-    public static boolean BuscarFilasRepetidas( float [][] array ){
 
+    public static boolean BuscarFilasRepetidas(float[][] array) {
         boolean filaRepetidaEncontrada = false;
-
-        for (var filaAComprobar: array ) {
-
-            for (var filas:array) {
-                if(filaAComprobar.equals(filas)){
-                    filaRepetidaEncontrada = true;
+        for (int i = 0; i < array.length; i++) {
+            //Almacenar una fila a comparar
+            var filaAComparar = array[i];
+            //Comparar si la fila a comparar coincide con otra fila en el array
+            for (int j = 0; j < array.length; j++) {
+                var filaActual = array[j];
+                //comparar si los indices de las filas son distintos
+                if (i != j) {
+                    if (CompararArrays(filaAComparar, filaActual)) {
+                        filaRepetidaEncontrada = true;
+                    }
                 }
             }
         }
-
         return filaRepetidaEncontrada;
     }
-
-    public static void PrintarArray2D (int array [][]){
-        for (var fila: array) {
-            for (var columna: fila) {
-                System.out.print(columna+", ");
+    public static boolean CompararArrays(float[] array1, float[] array2) {
+        boolean arrayIguales = true;
+        if (array1.length == array2.length) {
+            for (int i = 0; i < array1.length; i++) {
+                if (array1[i] != array2[i]) {
+                    arrayIguales = false;
+                }
+            }
+        } else {
+            arrayIguales = false;
+        }
+        return arrayIguales;
+    }
+    public static void PrintarArray2D(int array[][]) {
+        for (var fila : array) {
+            for (var columna : fila) {
+                System.out.print(columna + ", ");
             }
             System.out.println();
         }
     }
-    public static void PrintarArray2D (double array [][]){
-        for (var fila: array) {
-            for (var columna: fila) {
-                System.out.print(columna+", ");
+    public static void PrintarArray2D(double array[][]) {
+        for (var fila : array) {
+            for (var columna : fila) {
+                System.out.print(columna + ", ");
+            }
+            System.out.println();
+        }
+    }
+    public static void PrintarArray2D(float array[][]) {
+        for (var fila : array) {
+            for (var columna : fila) {
+                System.out.print(columna + ", ");
             }
             System.out.println();
         }
