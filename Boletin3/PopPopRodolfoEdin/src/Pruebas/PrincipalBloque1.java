@@ -119,12 +119,16 @@ public class PrincipalBloque1 {
                     //region Modificar posiciones array con expresion (i* j)3 /2*(i + j)
                     double matriz[][] = {{1.4, 3.7, 4.6}, {2.6, 6.8, 3.66}, {6.77, 5.44, 1.55}};
 
-                    System.out.println("Array antes de modificar posiciones ");
-                    MTDNumeros.PrintarArray2D(matriz);
+                    double matriz2D [][] = {{1,2},{3,4},{5,6}};
 
-                    MTDNumeros.ModificarPosicionesArray(matriz);
+                    System.out.println("Array antes de modificar posiciones ");
+                    MTDNumeros.PrintarArray2D(matriz2D);
+
+                    MTDNumeros.ModificarPosicionesArray(matriz2D);
                     System.out.println("Array despues de modificar posiciones");
-                    MTDNumeros.PrintarArray2D(matriz);
+                    MTDNumeros.PrintarArray2D(matriz2D);
+
+                    System.out.println(Arrays.deepToString(matriz2D) );
 
                     //endregion
                     break;
