@@ -60,17 +60,15 @@ public class PrincipalBloque2 {
                     break;
                 case 5:
                     //region Codificar un texto
-                    String textoSinCodificar= "Pocholito nena";
-                    System.out.println(textoSinCodificar);
+                    System.out.println("Ingresa la frase a codificar : ");
+                    String textoSinCodificar = entrada.nextLine();
+                    System.out.println("Frase modificada : ");
                     MTDCadenas.CodificarUnTexto(textoSinCodificar);
-
-                 //  System.out.println(textoSinCodificar);
-
 
                     //endregion
                     break;
                 case 6 :
-                    //salir del menu
+                    //region salir del menu
                     System.out.println("Cerrando el programa...");
                     menuActivo = false;
                     //endregion

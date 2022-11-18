@@ -41,6 +41,7 @@ public class PrincipalBloque1 {
                     //region Minino Comun Multiplo
                     int num1 = 0, num2 = 0, num3 = 0;
                     boolean numerosValidos = false;
+                    //Validar los numeros
                     while (!numerosValidos) {
                         try {
                             System.out.println("Ingresa el primer numero mayor que 0 y menor que 100 : ");
@@ -86,13 +87,16 @@ public class PrincipalBloque1 {
                     Random rnd = new Random();
                     float matrizTipoFloat[] = new float[10];
                     int matrizTipoInt[] = new int[10];
-
+                    //Rellenar array numeros aleatorios
                     for (int i = 0; i < matrizTipoFloat.length; i++) {
                         matrizTipoFloat[i] = rnd.nextFloat(1, 100);
                     }
+                    //Rellenar array numeros aleatorios
                     for (int i = 0; i < matrizTipoInt.length; i++) {
                         matrizTipoInt[i] = rnd.nextInt(1, 100);
                     }
+                    System.out.println(Arrays.toString(matrizTipoFloat));
+                    System.out.println(Arrays.toString(matrizTipoInt));
                     System.out.println("La media de matriz de float es : " + MTDNumeros.CalculaMedia(matrizTipoFloat));
                     System.out.println("La media de matriz de int es : " + MTDNumeros.CalculaMedia(matrizTipoInt));
 
@@ -104,13 +108,13 @@ public class PrincipalBloque1 {
 
                     System.out.println("Valores antes redondear : ");
                     System.out.println(Arrays.toString(valoresfloat));
-
+                    //Valores redondeados por arriba
                     var redondearArriba = MTDNumeros.RedondearValores(valoresfloat, false);
                     System.out.println("Valores redondeados por arriba : ");
                     System.out.println(Arrays.toString(redondearArriba));
-
+                    //Valores redondeados por arriba
                     var redondearAbajo = MTDNumeros.RedondearValores(valoresfloat, true);
-                    System.out.println("Valores redondeados por arriba : ");
+                    System.out.println("Valores redondeados por abajo : ");
                     System.out.println(Arrays.toString(redondearAbajo));
 
                     //endregion
@@ -129,8 +133,11 @@ public class PrincipalBloque1 {
                     //endregion
                     break;
                 case 8:
-                    int array1[][] = {{1, 3, 4}, {2, 6, 3}, {6, 5, 1}};
-                    MTDNumeros.CalculaMediaDeFilas(array1);
+                    //region método que reciba una matriz 2D de tipo int y devuelva el siguiente String
+                    int arrayMedia[][] = {{1, 3, 4}, {2, 6, 3}, {6, 5, 1}};
+                    MTDNumeros.PrintarArray2D(arrayMedia);
+                    MTDNumeros.CalculaMediaDeFilas(arrayMedia);
+                    //endregion
                     break;
                 case 9:
                     //region buscar filas repetidas

@@ -1,7 +1,9 @@
 package BloqueEjercicio2;
 
+import java.util.Arrays;
+
 public class MTDCadenas {
-    public static void OpcionesMenu(){
+    public static void OpcionesMenu() {
         System.out.println();
         System.out.println("1. Calcula la letra del dni. ");
         System.out.println("2. Construir texto con guiones pasandole un caracter. ");
@@ -10,7 +12,6 @@ public class MTDCadenas {
         System.out.println("5. Codificar un texto.");
         System.out.println("6. Cerrar el programa ");
     }
-
     public static boolean validaDNI(String DNI) {
 
         return DNI.matches("^[0-9]{8}$");
@@ -20,13 +21,14 @@ public class MTDCadenas {
         final char[] letrasDNI = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P',
                 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
         Character letraDNI;
-
+        //llamar metodo para saver si numero dni es valido
         var dniValido = validaDNI(numeroDNI);
 
         if (dniValido) {
+            //almacenar numero dni
             var numero = Integer.parseInt(numeroDNI);
             var resto = numero % 23;
-
+            //Calcula letra dni
             letraDNI = letrasDNI[resto];
         } else {
             letraDNI = ' ';
@@ -36,7 +38,7 @@ public class MTDCadenas {
 
     public static String ConstruirTextoConGuiones(String texto, Character caracter) {
         String textoConGuiones = "";
-
+        //recorrer texto
         for (int i = 0; i < texto.length(); i++) {
             var caracterTexto = texto.charAt(i);
             //Construir texto con guiones y caracter introducido por usuario
@@ -52,12 +54,12 @@ public class MTDCadenas {
     public static String ConstruirTextoConGuiones(String texto, Character... caracter) {
         String textoConGuiones = "";
         boolean caracterIgual = false;
-
+        //recorrer el texto
         for (int i = 0; i < texto.length(); i++) {
             var caracterTexto = texto.charAt(i);
             //Construir texto con guiones y caracter introducido por usuario
-
             caracterIgual = false;
+            //buscar si el caracter coincide con alguno de los caracteres introducidos
             for (int j = 0; j < caracter.length; j++) {
                 if (caracterTexto == caracter[j]) {
                     textoConGuiones += caracter[j];
@@ -65,6 +67,7 @@ public class MTDCadenas {
                     break;
                 }
             }
+            //guardo un guion si no encontre caracter igual a los caracteres introducidos
             if (!caracterIgual) {
                 textoConGuiones += '-';
             }
@@ -80,11 +83,13 @@ public class MTDCadenas {
         if (texto.length() >= 8) {
             for (int i = 0; i < texto.length(); i++) {
                 var caracter = texto.charAt(i);
-
+            //comprobar si caracter es digito
                 if (Character.isDigit(caracter)) {
                     digito = true;
                 }
+                //si el caracter el una letra
                 if (Character.isLetter(caracter)) {
+                    //comprueba caracter es mayuscula
                     if (Character.isUpperCase(caracter)) {
                         mayuscula = true;
                     } else {
@@ -93,30 +98,43 @@ public class MTDCadenas {
                 }
             }
         }
+        //si se cumplen todas las condiciones
         if (mayuscula && miniscula && digito) {
             return true;
         } else
             return false;
     }
 
-    public static void CodificarUnTexto ( String texto ){
+    public static void CodificarUnTexto(String texto) {
+        //Remplazar texto
+        texto = texto.replace('i', '1');
+        texto = texto.replace('o', '0');
+        texto = texto.replace('a', '*');
 
+        //Separar palabras con caracter espacio
+        var arrayPalabras = texto.split(" ");
 
-        var prueba =  texto.replace('i','1');
+        String palabrasModificadas[] = new String[arrayPalabras.length];
 
-        var prueba1 = prueba.replace('o','0');
-
-        var prueba2 = prueba1.replace('a','*');
-
-        var prueba3 = prueba2.split(" ");
-
-        for (int i = 0; i< prueba3.length; i++ ){
-
-
+        for (int i = 0; i < arrayPalabras.length; i++) {
+            //Buscar hashcode
+            var hashcode = arrayPalabras[i].hashCode();
+            //Concatenar con la palabra
+            palabrasModificadas[i] = arrayPalabras[i] + hashcode;
+            //numero de caracteres despues de modificar en binario
+            String numeroCaracteres = Integer.toBinaryString(palabrasModificadas[i].length());
+            //Almacenar la palabra antes de concatenar binario
+            var temporal = palabrasModificadas[i];
+            palabrasModificadas[i] = "";
+            //Concatenar palabra modificada con numero de caracteres en binario
+            palabrasModificadas[i] = numeroCaracteres + temporal;
         }
-
-
-
-        System.out.println(prueba2);
+        //concatenar array de palabras en string
+        String textoModificado = "";
+        for (var palabra : palabrasModificadas) {
+            textoModificado += palabra + " ";
+        }
+        //mostrar por consola texto modificado
+        System.out.println(textoModificado);
     }
 }
