@@ -10,15 +10,12 @@ public class MTDExpresionesRegulares {
         System.out.println("4. Comprueba que el String que recibe empieza por dígito y después contiene al menos 5 caracteres alfabéticos.");
         System.out.println("5. Salir del menu.");
     }
-
     public static boolean ValidarFormato(String texto) {
         return texto.matches("^[A-Z]{3}[0-9]{2}$");
     }
-
     public static boolean ValidarCorreo(String email) {
         return email.matches("^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
     }
-
     public static boolean ValidaTextoabc(String texto) {
         return texto.matches("^[a]||[b]||[c]$");
     }

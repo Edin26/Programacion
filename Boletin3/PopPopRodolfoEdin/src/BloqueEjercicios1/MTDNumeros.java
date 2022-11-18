@@ -152,7 +152,6 @@ public class MTDNumeros {
         // Siendo i el índice de fila y j el índice de columna. Si i y j son cero no se modifica el valor original.
 
         for (int i = 0; i < array.length; i++) {
-
             for (int j = 0; j < array[i].length; j++) {
                 if (j > 0 || i > 0) {
                     var primerOperando = Math.pow((i * j), 3);
@@ -163,15 +162,17 @@ public class MTDNumeros {
         }
     }
 
-    public static void CalculaMediaDeFilas(int[][] array) {
-        int contadorFila = 0;
+    public static String CalculaMediaDeFilas(int[][] array) {
+        String texto ="";
+        int contadorFila = 1;
         int filaAlta = 0;
         float mediaFilaMasAlta = 0;
         for (var fila : array) {
             //calcula la media de la fila
             var mediaFila = MTDNumeros.CalculaMedia(fila);
             //mostrar por consolta la media de la fila
-            System.out.println("La media de la fila : " + contadorFila + " es " + mediaFila);
+            texto += "La media de la fila : " + contadorFila + " es " + mediaFila + " \n";
+           // System.out.println("La media de la fila : " + contadorFila + " es " + mediaFila);
             //alamacenar la fila con media mas alta
             if (mediaFila > mediaFilaMasAlta) {
                 mediaFilaMasAlta = mediaFila;
@@ -179,7 +180,9 @@ public class MTDNumeros {
             }
             contadorFila++;
         }
-        System.out.println("La fila con la media mas alta es :" + filaAlta);
+        texto += "La fila con la media mas alta es :" + filaAlta;
+        //System.out.println("La fila con la media mas alta es :" + filaAlta);
+        return texto;
     }
 
     public static boolean BuscarFilasRepetidas(float[][] array) {

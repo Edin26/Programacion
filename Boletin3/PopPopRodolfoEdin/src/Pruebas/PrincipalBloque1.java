@@ -78,7 +78,7 @@ public class PrincipalBloque1 {
                     System.out.println("Array antes de llamar metodo modificar posiciones negativas ");
                     System.out.println(Arrays.toString(array));
                     MTDNumeros.AlmacenarMediaPositivos(array);
-                    System.out.println("Array antes de llamar metodo modificar posiciones negativas ");
+                    System.out.println("Array despues de llamar metodo modificar posiciones negativas ");
                     System.out.println(Arrays.toString(array));
                     //endregion
                     break;
@@ -95,7 +95,9 @@ public class PrincipalBloque1 {
                     for (int i = 0; i < matrizTipoInt.length; i++) {
                         matrizTipoInt[i] = rnd.nextInt(1, 100);
                     }
+                    System.out.println("Valores de tipo float");
                     System.out.println(Arrays.toString(matrizTipoFloat));
+                    System.out.println("Valores de tipo int");
                     System.out.println(Arrays.toString(matrizTipoInt));
                     System.out.println("La media de matriz de float es : " + MTDNumeros.CalculaMedia(matrizTipoFloat));
                     System.out.println("La media de matriz de int es : " + MTDNumeros.CalculaMedia(matrizTipoInt));
@@ -132,15 +134,13 @@ public class PrincipalBloque1 {
                     System.out.println("Array despues de modificar posiciones");
                     MTDNumeros.PrintarArray2D(matriz2D);
 
-                    System.out.println(Arrays.deepToString(matriz2D) );
-
                     //endregion
                     break;
                 case 8:
                     //region método que reciba una matriz 2D de tipo int y devuelva el siguiente String
-                    int arrayMedia[][] = {{1, 3, 4}, {2, 6, 3}, {6, 5, 1}};
+                    int arrayMedia[][] = {{1, 3, 4}, {2, 6, 3}, {6, 5, 1},{ 44,33, 1}};
                     MTDNumeros.PrintarArray2D(arrayMedia);
-                    MTDNumeros.CalculaMediaDeFilas(arrayMedia);
+                    System.out.println(MTDNumeros.CalculaMediaDeFilas(arrayMedia));
                     //endregion
                     break;
                 case 9:
@@ -148,7 +148,7 @@ public class PrincipalBloque1 {
                     float valores[][] = {{1.5f, 3.8f, 4.6f},
                             {1.5f, 3.8f, 4.6f},
                             {3.4f, 8.8f, 3.6f}};
-
+                    System.out.println("Valores de array :");
                     MTDNumeros.PrintarArray2D(valores);
                     System.out.println("Existen filas repetidas : " + MTDNumeros.BuscarFilasRepetidas(valores));
                     //endregion

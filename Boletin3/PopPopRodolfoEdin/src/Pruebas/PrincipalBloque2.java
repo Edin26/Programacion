@@ -39,6 +39,7 @@ public class PrincipalBloque2 {
                 case 2:
                     //region construye texto con guiones con 1 caracter
                     String texto = "montecastelo";
+                    System.out.println("Texto a modificar : "+texto);
                     var textoConGuiones = MTDCadenas.ConstruirTextoConGuiones(texto,'o');
                     System.out.println("El texto es : "+ textoConGuiones);
                     //endregion
@@ -46,7 +47,8 @@ public class PrincipalBloque2 {
                 case 3:
                     //region construye texto con guiones con n caracteres
                     String texto1 = "montecastelo";
-                    var textoConGuiones1 = MTDCadenas.ConstruirTextoConGuiones(texto1,'m','n','o','e','t');
+                    System.out.println("Texto a modificar : "+texto1);
+                    var textoConGuiones1 = MTDCadenas.ConstruirTextoConGuiones(texto1,'o','e','t');
 
                     System.out.println("El texto es : "+ textoConGuiones1);
                     //endregion
@@ -64,7 +66,6 @@ public class PrincipalBloque2 {
                     String textoSinCodificar = entrada.nextLine();
                     System.out.println("Frase modificada : ");
                     MTDCadenas.CodificarUnTexto(textoSinCodificar);
-
                     //endregion
                     break;
                 case 6 :
