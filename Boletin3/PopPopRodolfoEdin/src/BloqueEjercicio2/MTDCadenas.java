@@ -13,7 +13,6 @@ public class MTDCadenas {
         System.out.println("6. Cerrar el programa ");
     }
     public static boolean validaDNI(String DNI) {
-
         return DNI.matches("^[0-9]{8}$");
     }
 

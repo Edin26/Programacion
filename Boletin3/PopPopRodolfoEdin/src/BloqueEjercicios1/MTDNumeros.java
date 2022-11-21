@@ -184,7 +184,6 @@ public class MTDNumeros {
         //System.out.println("La fila con la media mas alta es :" + filaAlta);
         return texto;
     }
-
     public static boolean BuscarFilasRepetidas(float[][] array) {
         boolean filaRepetidaEncontrada = false;
         for (int i = 0; i < array.length; i++) {
@@ -219,7 +218,7 @@ public class MTDNumeros {
     public static void PrintarArray2D(int array[][]) {
         for (var fila : array) {
             for (var columna : fila) {
-                System.out.print(columna + ", ");
+                System.out.print(columna + " ");
             }
             System.out.println();
         }
