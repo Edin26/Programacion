@@ -18,6 +18,7 @@ public class MTDNumeros {
     }
 
     public static boolean NumeroPerfecto(int numero) {
+        //método que reciba un número int y devuelva true si ese número es perfecto.
         double suma = 0;
         for (int i = 1; i < numero; i++) {
             if (numero % i == 0) {
@@ -32,6 +33,7 @@ public class MTDNumeros {
     }
 
     public static int MinimoComunMultiplo(int num1, int num2, int num3) {
+        //Crear un método que reciba 3 números y devuelva su mínimo común múltiplo , es decir el número más bajo que sea múltiplo de los 3.
         boolean encontrado = false;
         int mcm = 0;
         //Asignarle el maximo de los 3 numeros
@@ -49,6 +51,7 @@ public class MTDNumeros {
     }
 
     public static float CalculaResistenciaEquivalente(float r1, float r2, int... unidades) {
+        //Crea un método que reciba dos valores de tipo float que representan dos resistencias(r1 y r2)
         float resistenciaEquivalente = 0;
         int unidad = 0;
         //comprobar si el parametro opcional no esta vacio
@@ -75,6 +78,7 @@ public class MTDNumeros {
     }
 
     public static void AlmacenarMediaPositivos(int[] array) {
+        //Método que recibe una matriz de números y modifica todas aquellas posiciones que almacenan un número negativo guardando en ellas el valor medio
         double mediaPositivos = 0;
         boolean completado = false;
 
@@ -103,6 +107,7 @@ public class MTDNumeros {
     }
 
     public static float CalculaMedia(float array[]) {
+        //Programar un método que devuelva la media de una matriz de tipo float que recibe como parámetro.
         float media = 0;
         float suma = 0;
 
@@ -120,6 +125,7 @@ public class MTDNumeros {
     }
 
     public static float CalculaMedia(int array[]) {
+       // Programar un método que devuelva la media de una matriz de tipo int que recibe como parámetro.
         float media = 0;
         float suma = 0;
 
@@ -133,6 +139,7 @@ public class MTDNumeros {
     }
 
     public static int[] RedondearValores(float array[], boolean redondear) {
+        //Método que recibe una matriz de tipo float y un boolean  y devuelve una matriz de int con los valores de la original redondeados
         int arrarEnteros[] = new int[array.length];
         for (int i = 0; i < array.length; i++) {
             //almacenar valores en array enteros
@@ -163,6 +170,7 @@ public class MTDNumeros {
     }
 
     public static String CalculaMediaDeFilas(int[][] array) {
+        //Programar un método que reciba una matriz 2D de tipo int y devuelva el siguiente String:
         String texto ="";
         int contadorFila = 1;
         int filaAlta = 0;
@@ -185,6 +193,8 @@ public class MTDNumeros {
         return texto;
     }
     public static boolean BuscarFilasRepetidas(float[][] array) {
+        //Programar un método que reciba una matriz de 2 dimensiones de tipo float e indique con un booleano si hay filas repetidas
+
         boolean filaRepetidaEncontrada = false;
         for (int i = 0; i < array.length; i++) {
             //Almacenar una fila a comparar
@@ -202,7 +212,10 @@ public class MTDNumeros {
         }
         return filaRepetidaEncontrada;
     }
+
+    //Metodos auxiliares
     public static boolean CompararArrays(float[] array1, float[] array2) {
+        //Metodo auxiliar
         boolean arrayIguales = true;
         if (array1.length == array2.length) {
             for (int i = 0; i < array1.length; i++) {
