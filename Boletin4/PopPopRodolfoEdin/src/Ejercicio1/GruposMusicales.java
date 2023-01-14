@@ -13,9 +13,9 @@ public class GruposMusicales {
 
     //Constructor que recibe los 4 atributos
     public GruposMusicales(String nombre, int tiempoActuación, int popularidad, float coste) {
-        this.nombre = nombre;
-        this.tiempoActuación = tiempoActuación;
-        this.coste = coste;
+        setNombre(nombre);
+        setTiempoActuación(tiempoActuación);
+        setCoste(coste);
         setPopularidad(popularidad);
     }
 
@@ -67,10 +67,10 @@ public class GruposMusicales {
     public String toString() {
         return
                 "Nombre = " + nombre + "\n" +
-                "Tiempo de actuación " + tiempoActuación + "minutos"+ "\n" +
+                "Tiempo de actuación " + tiempoActuación + " minutos"+ "\n" +
                 "Popularidad: " + popularidad + "\n" +
-                "Coste: " + coste + "Euros"+ "\n" +
-                "Coste total: " + calcularPrecioFinal(popularidad,coste) + "Euros" ;
+                "Coste: " + coste + " Euros"+ "\n" +
+                "Coste total: " + calcularPrecioFinal(popularidad,coste) + " Euros" ;
     }
 
 }
