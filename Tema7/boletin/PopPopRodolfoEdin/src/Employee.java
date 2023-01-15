@@ -1,31 +1,32 @@
 import java.time.LocalDate;
 
 
-public class Employee {
+public  class Employee {
 
     String DNI;
-    LocalDate fechaDeNacimiento;
-    String nombre;
-    LocalDate fechaDeContratacion;
-    double salario;
-    static double salarioBase = 1000;
+    LocalDate dateOfBirth;
+    String name;
+    LocalDate dateOfHiring;
+    double salary;
+    static double baseSalary = 1000;
 
-    public Employee(String DNI, LocalDate fechaDeNacimiento, String nombre, LocalDate fechaDeContratacion) {
+    public Employee(String DNI, LocalDate dateOfBirth, String name, LocalDate dateOfHiring) {
         this.DNI = DNI;
-        this.fechaDeNacimiento = fechaDeNacimiento;
-        this.nombre = nombre;
-        this.fechaDeContratacion = fechaDeContratacion;
-        CalculaSalario(fechaDeContratacion);
+        this.dateOfBirth = dateOfBirth;
+        this.name = name;
+        this.dateOfHiring = dateOfHiring;
+        CalculateSalary();
     }
 
-    private void CalculaSalario( LocalDate fechaDeContratacion){
+    public  void CalculateSalary(){
+
         //salario = salarioBase + (años de antiguedad/3)*salarioBase*0,05
-        LocalDate fechaActual = LocalDate.now() ;
-        var años =  fechaActual.getYear() - fechaDeContratacion.getYear();
+        LocalDate currentDate = LocalDate.now() ;
+        var años =  currentDate.getYear() - dateOfHiring.getYear();
         if (años > 0){
-            salario = salarioBase + (años /3.00)*salarioBase*0.05;
+            salary = baseSalary + (años /3.00)* baseSalary *0.05;
         }else {
-            salario = salarioBase;
+            salary = baseSalary;
         }
     }
 
@@ -37,54 +38,54 @@ public class Employee {
         this.DNI = DNI;
     }
 
-    public LocalDate getFechaDeNacimiento() {
-        return fechaDeNacimiento;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
-        this.fechaDeNacimiento = fechaDeNacimiento;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public LocalDate getFechaDeContratacion() {
-        return fechaDeContratacion;
+    public LocalDate getDateOfHiring() {
+        return dateOfHiring;
     }
 
-    public void setFechaDeContratacion(LocalDate fechaDeContratacion) {
-        this.fechaDeContratacion = fechaDeContratacion;
+    public void setDateOfHiring(LocalDate dateOfHiring) {
+        this.dateOfHiring = dateOfHiring;
     }
 
-    public double getSalario() {
-        return salario;
+    public double getSalary() {
+        return salary;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
-    public static double getSalarioBase() {
-        return salarioBase;
+    public static double getBaseSalary() {
+        return baseSalary;
     }
 
-    public static void setSalarioBase(double salarioBase) {
-        Employee.salarioBase = salarioBase;
+    public static void setBaseSalary(double baseSalary) {
+        Employee.baseSalary = baseSalary;
     }
 
     @Override
     public String toString() {
         return "Empleado{" +
                 "DNI='" + DNI + '\'' +
-                ", fechaDeNacimiento=" + fechaDeNacimiento +
-                ", nombre='" + nombre + '\'' +
-                ", fechaDeContratacion=" + fechaDeContratacion +
-                ", salario=" + salario +
+                ", fechaDeNacimiento=" + dateOfBirth +
+                ", nombre='" + name + '\'' +
+                ", fechaDeContratacion=" + dateOfHiring +
+                ", salario=" + salary +
                 '}';
     }
 }

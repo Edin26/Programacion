@@ -30,6 +30,7 @@ public class Main {
         System.out.println(validarReal("-5_5",1));
 
          System.out.println(validarMatricula("1234ABC"));
+         texto.matches("^[0-9]{4}[A-Z]{3}$");
         */
 
 

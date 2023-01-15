@@ -2,54 +2,30 @@ import java.time.LocalDate;
 
 public class Main {
 
-   public static boolean SaveEmployee(Employee employees[], Employee e){
-    boolean savedEmployee = false;
-      // if (e != null){
-           for (int i =0 ; i< employees.length ; i++){
-               if (employees[i] == null){
-                   employees[i] = e;
-                   savedEmployee = true;
-                   break;
-               }
-
-           }
-     //  }
-       return savedEmployee;
-   }
-   public static void ShowEmployees(Employee employees []){
-       for (var e : employees) {
-           if (e != null){
-               System.out.println(e.toString());
-           }
-       }
-   }
-
-   public static Employee EmployeeSearch( Employee employees [], String name ){
-
-       for (var e : employees ) {
-
-           if (e.getNombre() != null)
-
-       }
-
-   }
-
-
-
     public static void main(String[] args) {
 
 
-        Employee T1 = new Employee("01847270K", LocalDate.parse("1998-06-26"),"Edin",  LocalDate.parse("2023-05-03"));
+        Employee t1 = new Employee("01847270K", LocalDate.parse("1998-06-26"),"Edin",  LocalDate.parse("2021-05-03"));
+        Employee t2 = new Employee("01847270K", LocalDate.parse("1998-06-26"),"May",  LocalDate.parse("2023-05-03"));
 
         Employee employees[] = new Employee[10];
 
-        var save = SaveEmployee(employees,T1);
+        var save1 = MethodsEmployed.SaveEmployee(employees,t1);
+        var save2 = MethodsEmployed.SaveEmployee(employees,t2);
 
 
-        ShowEmployees(employees);
+        var found = MethodsEmployed.EmployeeSearch(employees,"");
+
+        if (found != null){
+            System.out.println(found.toString());
+        }
+        MethodsEmployed.ShowEmployees(employees);
 
         System.out.println();
 
+        //t1.setDateOfHiring( LocalDate.parse("2022-04-05"));
+        //t1.CalculateSalary();
+        MethodsEmployed.ShowEmployees(employees);
 
 
 
