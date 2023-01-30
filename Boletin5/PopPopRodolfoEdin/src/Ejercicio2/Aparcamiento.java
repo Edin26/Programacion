@@ -1,5 +1,6 @@
 package Ejercicio2;
 
+import Ejercicio1.ExceptionProducto;
 import Ejercicio1.IAlquilable;
 
 import java.time.LocalTime;
@@ -12,10 +13,8 @@ public class Aparcamiento implements IAlquilable {
     private LocalTime horaPrestamo;
     private LocalTime horaDevolucion;
 
-
     public Aparcamiento() {
     }
-
     public Aparcamiento(String codigo, int numeroPlaza, boolean alquilada, LocalTime horaPrestamo, LocalTime horaDevolucion) {
         ValidaCodigo(codigo);
         this.numeroPlaza = numeroPlaza;
@@ -35,16 +34,17 @@ public class Aparcamiento implements IAlquilable {
 
     @Override
     public void devolver() {
-
     }
 
     public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(String codigo) throws ExceptionProducto {
         if (ValidaCodigo(codigo)){
             this.codigo = codigo;
+        }else {
+            throw new ExceptionProducto();
         }
     }
 
@@ -56,11 +56,11 @@ public class Aparcamiento implements IAlquilable {
         this.numeroPlaza = numeroPlaza;
     }
 
-    public boolean isAlquilada() {
+    public boolean getAlquilada() {
         return alquilada;
     }
 
-    public void setAlquilada(boolean alquilada) {
+    public void getAlquilada(boolean alquilada) {
         this.alquilada = alquilada;
     }
 
@@ -80,6 +80,16 @@ public class Aparcamiento implements IAlquilable {
         this.horaDevolucion = horaDevolucion;
     }
 
+    public String toStringFichero() {
+        String alquilado = "0";
+        if (getAlquilada()) {
+            alquilado = "1";
+        }
+        //Aparcamiento(String codigo, int numeroPlaza, boolean alquilada, LocalTime horaPrestamo, LocalTime horaDevolucion)
+        String formato = getCodigo() + "," + getNumeroPlaza() +"," + alquilado + "," + getHoraPrestamo() +"," + getHoraDevolucion();
+
+        return formato;
+    }
     @Override
     public String toString() {
         return "Aparcamiento{" +

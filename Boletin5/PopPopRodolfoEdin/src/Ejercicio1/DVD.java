@@ -6,7 +6,7 @@ public class DVD extends Producto {
 
     public DVD(){}
 
-    public DVD(String codigo, String titulo, int duracion) {
+    public DVD(String codigo, String titulo, int duracion) throws Exception {
         super(codigo, titulo);
         this.duracion = duracion;
     }

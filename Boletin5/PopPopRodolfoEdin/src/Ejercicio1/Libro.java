@@ -10,7 +10,7 @@ public class Libro extends Producto {
 
     }
 
-    public Libro(String codigo, String titulo, String autor, int numPaginas) {
+    public Libro(String codigo, String titulo, String autor, int numPaginas) throws Exception {
         super(codigo, titulo);
         this.autor = autor;
         this.numPaginas = numPaginas;
@@ -30,7 +30,6 @@ public class Libro extends Producto {
            return true;
        }
     }
-
     //endregion
 
     //#region Metodos de acceso

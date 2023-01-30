@@ -9,7 +9,7 @@ public class Pelicula extends DVD {
     public Pelicula() {
     }
 
-    public Pelicula(String codigo, String titulo, int duracion, String director, String genero) {
+    public Pelicula(String codigo, String titulo, int duracion, String director, String genero) throws Exception {
         super(codigo, titulo, duracion);
         this.director = director;
         this.genero = genero;

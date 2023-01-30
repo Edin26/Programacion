@@ -12,7 +12,7 @@ public abstract class Producto implements IAlquilable {
 
     }
 
-    public Producto(String codigo, String titulo) {
+    public Producto(String codigo, String titulo) throws ExceptionProducto {
         setCodigo(codigo);
         this.titulo = titulo;
     }
@@ -40,13 +40,13 @@ public abstract class Producto implements IAlquilable {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(String codigo) throws ExceptionProducto {
         if (ValidaCodigo(codigo)){
             this.codigo = codigo;
         }
-        //else {
-         //   throw Exception ;
-        //}
+        else {
+            throw new ExceptionProducto();
+        }
     }
 
     public String getTitulo() {

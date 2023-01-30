@@ -7,7 +7,7 @@ public class Musica extends DVD {
     public Musica() {
     }
 
-    public Musica(String codigo, String titulo, int duracion, String grupo) {
+    public Musica(String codigo, String titulo, int duracion, String grupo) throws Exception {
         super(codigo, titulo, duracion);
         this.grupo = grupo;
     }
