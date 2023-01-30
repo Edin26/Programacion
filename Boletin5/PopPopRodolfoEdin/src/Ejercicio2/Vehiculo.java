@@ -15,7 +15,6 @@ public class Vehiculo implements IAlquilable {
     private LocalDate fechaDevolucion;
 
     public Vehiculo(){}
-
     public Vehiculo(String matricula, String marca, String modelo, boolean alquilado, LocalDate fechaPrestamo, LocalDate fechaDevolucion) {
         setMatricula(matricula);
         this.marca = marca;
@@ -24,7 +23,6 @@ public class Vehiculo implements IAlquilable {
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
     }
-
     public boolean ValidaMatricula(String matricula){
         return matricula.matches("^[0-9]{4}[A-Z]{3}$");
     }
@@ -47,26 +45,19 @@ public class Vehiculo implements IAlquilable {
     public void devolver() {
 
     }
-
-
-
     public String getMarca() {
         return marca;
     }
-
     public void setMarca(String marca) {
         this.marca = marca;
     }
-
     public String getModelo() {
         return modelo;
     }
-
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-
-    public boolean isAlquilado() {
+    public boolean getAlquilado() {
         return alquilado;
     }
 
@@ -89,6 +80,18 @@ public class Vehiculo implements IAlquilable {
     public void setFechaDevolucion(LocalDate fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
+
+    public String toStringFichero() {
+        String alquilado = "0";
+        if (getAlquilado()) {
+            alquilado = "1";
+        }
+        //String matricula, String marca, String modelo, boolean alquilado, LocalDate fechaPrestamo, LocalDate fechaDevolucion
+        String formato = getMatricula() + "," + getModelo() +"," + alquilado + "," + getFechaPrestamo() +"," + getFechaDevolucion();
+
+        return formato;
+    }
+
 
     @Override
     public String toString() {
