@@ -6,22 +6,13 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
 
 public class BiblioyParking {
-    public static String sumarDiasAFecha(String fecha, int dias) {
-        if(dias == 0){
-            return fecha;
-        }
-        String[] f = fecha.split("-");
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Integer.parseInt(f[0]), Integer.parseInt(f[1])-1, Integer.parseInt(f[2]));
-        calendar.add(Calendar.DAY_OF_MONTH, dias);
-        SimpleDateFormat fe = new SimpleDateFormat("YYYY-MM-dd");
-        return fe.format(calendar.getTime());
-    }
 
 
     public static void main(String[] args) {
@@ -43,27 +34,34 @@ public class BiblioyParking {
             MetodosFicheros.ConexionFichero(alquilables, rutaDisco, DISCO);
             MetodosFicheros.ConexionFichero(alquilables, rutaPelicula, PELICULA);
             MetodosFicheros.ConexionFichero(alquilables, rutaLibro, LIBRO);
-            MetodosFicheros.ConexionFichero(alquilables, rutaVehiculos, VEHICULO);º
+            MetodosFicheros.ConexionFichero(alquilables, rutaVehiculos, VEHICULO);
+            MetodosFicheros.ConexionFichero(alquilables, rutaAparcamiento, APARCAMIENTO);
         } catch (Exception e) {
             System.out.println("Error al guardar infomacion de ficheros");
         }
 
         LocalTime hora = LocalTime.now();
-        var temp = LocalTime.now().getHour() + ":"+ LocalTime.now().getMinute();
+        var temp = LocalTime.now().getHour() + ":" + LocalTime.now().getMinute();
         temp = "00:00";
-        System.out.println(temp);
+       // System.out.println(temp);
 
         LocalDate date = LocalDate.now();
         //System.out.println(date);
         date = LocalDate.parse("1111-11-11");
-        System.out.println(date);
+      //  System.out.println(date);
         //System.out.println(sumarDiasAFecha(date.toString() , 10));
+
+        LocalTime d = LocalTime.now();
+        String s = d.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT));
+        System.out.println("SHORT: " + s);
+
+        //System.out.println(LocalTime.now());
 
         //endregionn
         boolean menuActivo = true;
         int opcionActual = 0;
 
-        if (menuActivo=true) {
+        if (menuActivo = true) {
             do {
                 System.out.println("1. Alquilar un libro.");
                 System.out.println("2. Alquilar una Película.");
@@ -92,8 +90,9 @@ public class BiblioyParking {
                             if (p instanceof Libro) {
                                 if (((Producto) p).getAlquilado() == false) {
                                     System.out.println(p);
+                                    numLibros++;
                                 }
-                                numLibros++;
+
                             }
                         }
                         if (numLibros > 0) {
@@ -134,8 +133,9 @@ public class BiblioyParking {
                             if (p instanceof Pelicula) {
                                 if (((Producto) p).getAlquilado() == false) {
                                     System.out.println(p);
+                                    numPeliculas++;
                                 }
-                                numPeliculas++;
+
 
                             }
                         }
@@ -177,9 +177,10 @@ public class BiblioyParking {
                             if (p instanceof Musica) {
                                 if (((Producto) p).getAlquilado() == false) {
                                     System.out.println(p);
+                                    numDVD++;
                                 }
                             }
-                            numDVD++;
+
                         }
                         if (numDVD > 0) {
                             System.out.println("Desea alquilar un DVDMusica ?");
@@ -245,10 +246,118 @@ public class BiblioyParking {
                         }
                         break;
                     case 6:
+                        //region ALQUILAR UN VEHICULO
+                        //mostrar los vehiculos disponibles
+                        System.out.println("Vehiculos disponibles para alquilar :");
+                        int numvehiculos = 0;
+                        for (var p : alquilables) {
+                            if (p instanceof Vehiculo) {
+
+                                if (((Vehiculo) p).getAlquilado() == false) {
+                                    System.out.println(p);
+                                    numvehiculos++;
+                                }
+
+                            }
+                        }
+                        if (numvehiculos > 0) {
+                            System.out.println("Desea alquilar un vehiculo ?");
+                            System.out.println("S/N");
+                            String matricula = new Scanner(System.in).nextLine();
+                            if (matricula.equals("S") || matricula.equals("s")) {
+                                boolean alquilado = false;
+                                System.out.println("Ingresa la matricula del vehiculo :");
+                                matricula = new Scanner(System.in).nextLine();
+                                Vehiculo vehiculoAlquilado = null;
+                                //buscar codigo
+                                for (var p : alquilables) {
+                                    if (p instanceof Vehiculo) {
+                                        if (((Vehiculo) p).getMatricula().equals(matricula)) {
+                                            p.alquilar();
+                                            vehiculoAlquilado = (Vehiculo) p;
+                                            alquilado = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (alquilado) {
+                                    System.out.println("Se ha alquilado el vehiculo :" + vehiculoAlquilado.toString());
+                                } else {
+                                    System.out.println("No se ha podido alquilar el vehiculo con matricula " + matricula);
+                                }
+                            }
+                        } else {
+                            System.out.println("No hay vehiculos disponibles para alquilar.");
+                        }
+                        //endregion
                         break;
                     case 7:
+                        //region Devolucion producto
+                        System.out.println("Ingrese la matricula del vehiculo a devolver : ");
+                        String matriculaADevolver = new Scanner(System.in).nextLine();
+                        boolean devolucionVehiculoOk = false;
+                        Vehiculo vehiculoDevuelto = null;
+                        for (var p : alquilables) {
+                            if (p instanceof Vehiculo) {
+                                if (((Vehiculo) p).getMatricula().equals(matriculaADevolver) && ((Vehiculo) p).getAlquilado()) {
+                                    p.devolver();
+                                    devolucionVehiculoOk = true;
+                                    vehiculoDevuelto = (Vehiculo) p;
+                                    break;
+                                }
+                            }
+                        }
+                        if (devolucionVehiculoOk) {
+                            System.out.println("Se ha devuelto el vehiculo :" + vehiculoDevuelto.toString());
+                        } else {
+                            System.out.println("No ha sido posible devoler el producto con codigo : " + matriculaADevolver);
+                        }
+                        //endregion
                         break;
                     case 8:
+                        //region ALQUILAR PLAZA APARCAMIENTO
+                        System.out.println("Plazas de aparcamiento disponibles para alquilar :");
+                        int numAparcamientos = 0;
+                        for (var p : alquilables) {
+                            if (p instanceof Aparcamiento) {
+
+                                if (((Aparcamiento) p).getAlquilada() == false) {
+                                    System.out.println(p);
+                                    numAparcamientos++;
+                                }
+
+                            }
+                        }
+                        if (numAparcamientos > 0) {
+                            System.out.println("Desea alquilar una plaza de aparcamiento ?");
+                            System.out.println("S/N");
+                            String codigoPlaza = new Scanner(System.in).nextLine();
+                            if (codigoPlaza.equals("S") || codigoPlaza.equals("s")) {
+                                boolean alquilado = false;
+                                System.out.println("Ingresa el codigo de la plaza de aparcamiento :");
+                                codigoPlaza = new Scanner(System.in).nextLine();
+                                Aparcamiento plazaAlquilada = null;
+                                //buscar codigo
+                                for (var p : alquilables) {
+                                    if (p instanceof Aparcamiento) {
+                                        if (((Aparcamiento) p).getCodigo().equals(codigoPlaza)) {
+                                            p.alquilar();
+                                            plazaAlquilada = (Aparcamiento) p;
+                                            alquilado = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (alquilado) {
+                                    System.out.println("Se ha alquilado la plaza :" + plazaAlquilada.toString());
+                                } else {
+                                    System.out.println("No se ha podido alquilar la plaza de aparcamiento: " + codigoPlaza);
+                                }
+                            }
+                        } else {
+                            System.out.println("No hay plaza de aparcamiento disponibles para alquilar.");
+                        }
+                        //endregion
                         break;
                     case 9:
                         //region GuardarDatos Fichero
@@ -258,12 +367,16 @@ public class BiblioyParking {
                         System.out.println("Ficheros guardados con exito en ruta: " + rutaPelicula);
                         MetodosFicheros.GuardarDatosFicheros(alquilables, rutaLibro, LIBRO);
                         System.out.println("Ficheros guardados con exito en ruta: " + rutaLibro);
+                        MetodosFicheros.GuardarDatosFicheros(alquilables, rutaVehiculos, VEHICULO);
+                        System.out.println("Ficheros guardados con exito en ruta: " + rutaVehiculos);
 
                         //Actualizar Array List
                         alquilables.clear();
                         MetodosFicheros.ConexionFichero(alquilables, rutaDisco, DISCO);
                         MetodosFicheros.ConexionFichero(alquilables, rutaPelicula, PELICULA);
                         MetodosFicheros.ConexionFichero(alquilables, rutaLibro, LIBRO);
+                        MetodosFicheros.ConexionFichero(alquilables, rutaVehiculos, VEHICULO);
+                        MetodosFicheros.ConexionFichero(alquilables, rutaAparcamiento, APARCAMIENTO);
                         //endregion
                         break;
                     case 10:

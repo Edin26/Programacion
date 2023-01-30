@@ -1,9 +1,11 @@
 package Ejercicio1;
 
+import Ejercicio2.Aparcamiento;
 import Ejercicio2.Vehiculo;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 
@@ -54,16 +56,25 @@ public class MetodosFicheros {
                     productos.add(libro);
                     break;
                 case 4:
-                    boolean alquilado=false;
+                    boolean vAlquilado=false;
                     if (Integer.parseInt(datosFichero[3]) == 1) {
-                        alquilado = true;
+                        vAlquilado = true;
                     }
-                    var vehiculo = new Vehiculo(datosFichero[0],datosFichero[1],datosFichero[2],alquilado,
+                    var vehiculo = new Vehiculo(datosFichero[0],datosFichero[1],datosFichero[2],vAlquilado,
                             LocalDate.parse(datosFichero[4]),LocalDate.parse(datosFichero[5]));
 
                     productos.add(vehiculo);
                     break;
                 case 5:
+                    //String codigo, int numeroPlaza, boolean alquilada, LocalDate horaPrestamo, LocalDate horaDevolucion
+                    boolean pAlquilado=false;
+                    if (Integer.parseInt(datosFichero[2]) == 1) {
+                        pAlquilado = true;
+                    }
+
+                    var aparcamiento = new Aparcamiento(datosFichero[0],Integer.parseInt(datosFichero[1]),pAlquilado,
+                            LocalTime.parse(datosFichero[3]),LocalTime.parse(datosFichero[4]));
+                    productos.add(aparcamiento);
                     break;
             }
         }catch (Exception e) {
@@ -94,8 +105,16 @@ public class MetodosFicheros {
                         }
                         break;
                     case 4:
+                        if (p instanceof Vehiculo) {
+                            bfWrite.write(((Vehiculo) p).toStringFichero());
+                            bfWrite.newLine();
+                        }
                         break;
                     case 5:
+                        if (p instanceof Aparcamiento) {
+                            bfWrite.write(((Aparcamiento) p).toStringFichero());
+                            bfWrite.newLine();
+                        }
                         break;
                 }
             }

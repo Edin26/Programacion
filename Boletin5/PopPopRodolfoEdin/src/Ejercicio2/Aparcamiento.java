@@ -3,7 +3,10 @@ package Ejercicio2;
 import Ejercicio1.ExceptionProducto;
 import Ejercicio1.IAlquilable;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class Aparcamiento implements IAlquilable {
 
@@ -15,8 +18,8 @@ public class Aparcamiento implements IAlquilable {
 
     public Aparcamiento() {
     }
-    public Aparcamiento(String codigo, int numeroPlaza, boolean alquilada, LocalTime horaPrestamo, LocalTime horaDevolucion) {
-        ValidaCodigo(codigo);
+    public Aparcamiento(String codigo, int numeroPlaza, boolean alquilada, LocalTime horaPrestamo, LocalTime horaDevolucion) throws ExceptionProducto {
+        setCodigo(codigo);
         this.numeroPlaza = numeroPlaza;
         this.alquilada = alquilada;
         this.horaPrestamo = horaPrestamo;
@@ -29,11 +32,30 @@ public class Aparcamiento implements IAlquilable {
 
     @Override
     public boolean alquilar() {
-        return false;
+        if (getAlquilada()){
+            return false;
+        }
+        else {
+            setAlquilada(true);
+         //   fechaPrestamo = LocalDate.now();
+           // fechaDevolucion = LocalDate.now().plusDays(10);
+            LocalTime d = LocalTime.now();
+            String s = d.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT));
+           // horaPrestamo = LocalTime.parse(s);
+
+            horaPrestamo = LocalTime.now();
+
+            horaDevolucion = LocalTime.now().plusHours(5);
+
+            return true;
+        }
     }
 
     @Override
     public void devolver() {
+        setAlquilada(false);
+        horaPrestamo = LocalTime.parse("00:00");
+        horaDevolucion = LocalTime.parse("00:00");
     }
 
     public String getCodigo() {
@@ -60,7 +82,7 @@ public class Aparcamiento implements IAlquilable {
         return alquilada;
     }
 
-    public void getAlquilada(boolean alquilada) {
+    public void setAlquilada(boolean alquilada) {
         this.alquilada = alquilada;
     }
 

@@ -2,7 +2,9 @@ package Ejercicio2;
 
 import Ejercicio1.IAlquilable;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Vehiculo implements IAlquilable {
@@ -26,6 +28,17 @@ public class Vehiculo implements IAlquilable {
     public boolean ValidaMatricula(String matricula){
         return matricula.matches("^[0-9]{4}[A-Z]{3}$");
     }
+    public String sumarDiasAFechaPrestamo(String fecha, int dias) {
+        if(dias == 0){
+            return fecha;
+        }
+        String[] f = fecha.split("-");
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Integer.parseInt(f[0]), Integer.parseInt(f[1])-1, Integer.parseInt(f[2]));
+        calendar.add(Calendar.DAY_OF_MONTH, dias);
+        SimpleDateFormat fe = new SimpleDateFormat("YYYY-MM-dd");
+        return fe.format(calendar.getTime());
+    }
 
     public String getMatricula() {
         return matricula;
@@ -38,11 +51,23 @@ public class Vehiculo implements IAlquilable {
     }
     @Override
     public boolean alquilar() {
-        return false;
+        if (getAlquilado()){
+            return false;
+        }
+        else {
+            setAlquilado(true);
+            fechaPrestamo = LocalDate.now();
+            fechaDevolucion = LocalDate.now().plusDays(10);
+            return true;
+        }
     }
 
     @Override
     public void devolver() {
+        LocalDate fechaNula = LocalDate.parse("1999-11-11");
+        setAlquilado(false);
+        fechaPrestamo =fechaNula;
+        fechaDevolucion = fechaNula;
 
     }
     public String getMarca() {
@@ -87,7 +112,7 @@ public class Vehiculo implements IAlquilable {
             alquilado = "1";
         }
         //String matricula, String marca, String modelo, boolean alquilado, LocalDate fechaPrestamo, LocalDate fechaDevolucion
-        String formato = getMatricula() + "," + getModelo() +"," + alquilado + "," + getFechaPrestamo() +"," + getFechaDevolucion();
+        String formato = getMatricula() + "," + getMarca()+"," + getModelo() +"," + alquilado + "," + getFechaPrestamo() +"," + getFechaDevolucion();
 
         return formato;
     }
